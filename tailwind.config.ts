@@ -1,5 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme")
 import type { Config } from "tailwindcss"
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -18,6 +18,7 @@ const config = {
       },
     },
     extend: {
+     
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -52,6 +53,9 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       borderRadius: {
         lg: "var(--radius)",
