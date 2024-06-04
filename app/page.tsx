@@ -1,9 +1,8 @@
-import Image from "next/image";
-
+import History from "@/components/history/History";
 export default function Home() {
   return (
    <div>
-    Page
+<History/>
    </div>
   );
 }
