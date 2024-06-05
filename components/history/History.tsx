@@ -2,6 +2,8 @@ import React from "react";
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import { X } from "lucide-react";
+import { Button } from "../ui/button";
 
 const History = () => {
   const links = [
@@ -39,35 +41,39 @@ const History = () => {
 
   return (
     <div className='mt-8'>
-      <Card>
-        <CardContent>
-          {links.map((link, i) => (
-            <>
-              <div
-                className='flex justify-between p-3 my-2 rounded-lg py-4  transition duration-300 hover:bg-[#f8f8f8] dark:hover:bg-[#333]  '
-                key={i}
-              >
-                <div className='flex gap-3  '>
-                  <div>
-                    <Image
-                      src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
-                      alt='img'
-                      width={22}
-                      height={22}
-                    />
-                  </div>
-                  <div>
-                    <h4 className='text-sm'>Better History</h4>
-                    <p className='text-[12px] text-[#777]'>{link.url}</p>
-                  </div>
-                </div>
-                <div className='text-sm'>2024/06/05</div>
+      {links.map((link, i) => (
+        <>
+          <div
+            className=' history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded  transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]  '
+            key={i}
+          >
+            <div className='flex gap-2 items-start  '>
+              <div>
+                <Image
+                  src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
+                  alt='img'
+                  width={20}
+                  height={20}
+                />
               </div>
-              <Separator />
-            </>
-          ))}
-        </CardContent>
-      </Card>
+              <div>
+                <h4 className='text-[12px]'>Better History</h4>
+                <p className='text-[10px] text-[#999]'>{link.url}</p>
+              </div>
+            </div>
+            <div className='text-[10px] text-[#999] date'>2024/06/05</div>
+            <div className='btns hidden items-center gap-2 '>
+              <Button
+                size='sm'
+                className='text-[10px] bg-[#070607] text-white rounded'
+              >
+                More From Site
+              </Button>
+              <X size={18} />
+            </div>
+          </div>
+        </>
+      ))}
     </div>
   );
 };

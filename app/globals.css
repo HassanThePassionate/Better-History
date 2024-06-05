@@ -74,3 +74,11 @@
     @apply bg-background text-foreground;
   }
 }
+.history:hover {
+  .date {
+    display: none;
+  }
+  .btns {
+    display: flex;
+  }
+}

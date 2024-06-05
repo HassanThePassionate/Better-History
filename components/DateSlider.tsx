@@ -68,36 +68,42 @@ const DateSlider: React.FC = () => {
   };
 
   return (
-    <div className='flex items-center justify-between mt-10'>
+    <div className='flex items-center justify-between py-[13px]'>
       <Button
         onClick={handlePrev}
         disabled={dates[0].getTime() >= today.getTime()}
         size='icon'
         variant='outline'
+        className='h-[42px] max-w-[25px] min-w-[25px] relative rounded bg-[#f9f9f9] dark:bg-[#353535] dark:hover:bg-[#757575] hover:bg-black hover:text-white transition duration-300 border border-[#f3f3f3] dark:border-[#333]'
       >
-        <ChevronLeft size={16} />
+        <ChevronLeft size={12} />
       </Button>
 
       <div className='flex items-center gap-5'>
         {dates.map((date, index) => (
           <Card
             key={index}
-            className={`text-center flex items-center justify-center flex-col dark:hover:bg-[#666] hover:bg-black h-[50px] w-[90px] max-w-[90px] hover:text-white transition duration-500 ${
+            className={`text-center flex items-center rounded justify-center flex-col dark:border-[#333] dark:hover:bg-[#757575] hover:bg-black h-[50px] w-[90px] max-w-[90px] hover:text-white transition duration-500 ${
               date.getTime() === selectedDate.getTime()
-                ? "bg-black text-white dark:bg-[#666]"
-                : "bg-[#f8f8f8] dark:bg-[#333]"
+                ? "bg-black text-white dark:bg-[#757575]"
+                : "bg-[#f9f9f9] dark:bg-[#353535]"
             }`}
             onClick={() => handleDateSelect(date)}
             style={{ cursor: "pointer" }}
           >
-            <h3 className='text-[14px]'>{getLabel(date)}</h3>
-            <p className='text-[12px]'>{getFormattedDate(date)}</p>
+            <strong className='text-[12px]'>{getLabel(date)}</strong>
+            <p className='text-[10px]'>{getFormattedDate(date)}</p>
           </Card>
         ))}
       </div>
 
-      <Button onClick={handleNext} variant='outline' size='icon'>
-        <ChevronRight size={16} />
+      <Button
+        onClick={handleNext}
+        variant='outline'
+        size='icon'
+        className='h-[42px] max-w-[25px] min-w-[25px] relative rounded bg-[#f9f9f9] dark:bg-[#353535] dark:hover:bg-[#757575] hover:bg-black hover:text-white transition duration-300 border border-[#f3f3f3] dark:border-[#333]'
+      >
+        <ChevronRight size={12} />
       </Button>
     </div>
   );

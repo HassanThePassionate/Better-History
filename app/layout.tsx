@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen dark:bg-[#1C1D21] font-sans antialiased",
           fontSans.variable
         )}
       >
@@ -34,11 +34,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className='flex gap-8'>
+          <div className='flex'>
             <div className='h-[100vh] sticky top-0 '>
               <Sidebar />
             </div>
-            <div className='md:w-[1024px] '>
+            <div className='md:w-[1024px] px-6 '>
               <Navbar />
               {children}
             </div>
