@@ -35,7 +35,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className='flex gap-8'>
-            <div className='h-[100vh] '>
+            <div className='h-[100vh] sticky top-0 '>
               <Sidebar />
             </div>
             <div className='md:w-[1024px] '>

@@ -14,7 +14,7 @@ import { ModeToggle } from "./ModeButton";
 
 const Sidebar = () => {
   return (
-    <div className='flex h-full max-h-screen md:w-[300px]   flex-col gap-2 bg-muted'>
+    <div className='flex h-screen  md:w-[300px]   flex-col gap-2 bg-muted'>
       <div className='flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6'>
         <Link href='/' className='flex items-center gap-2 font-semibold'>
           <History className='h-6 w-6' />

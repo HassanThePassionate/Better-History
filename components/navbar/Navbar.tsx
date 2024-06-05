@@ -1,10 +1,8 @@
-import Logo from "./Logo";
-import Menu from "./Menu";
 import Search from "./Search";
 
 const Navbar = () => {
   return (
-    <div className=' h-[64px] p-2  flex items-center gap-10 border-b border-[#f5f5f5]'>
+    <div className=' p-4 py-3  flex items-center gap-10 border-b border-[#e5e7ec]'>
       <h2>Activity</h2>
       <Search />
     </div>
