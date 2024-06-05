@@ -85,7 +85,7 @@ const DateSlider: React.FC = () => {
             className={`text-center flex items-center justify-center flex-col dark:hover:bg-[#666] hover:bg-black h-[50px] w-[90px] max-w-[90px] hover:text-white transition duration-500 ${
               date.getTime() === selectedDate.getTime()
                 ? "bg-black text-white dark:bg-[#666]"
-                : "bg-gray-200 dark:bg-[#333]"
+                : "bg-[#f8f8f8] dark:bg-[#333]"
             }`}
             onClick={() => handleDateSelect(date)}
             style={{ cursor: "pointer" }}
