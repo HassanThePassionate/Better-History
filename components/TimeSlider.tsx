@@ -1,10 +1,24 @@
 import { Moon, Sun } from "lucide-react";
 import { Button } from "./ui/button";
+
 interface TimeSliderProps {
   showcase: boolean;
 }
+
 const TimeSlider = ({ showcase }: TimeSliderProps) => {
-  const numbers = Array.from({ length: 24 }, (_, index) => index + 1);
+  // Creating an array for hours in the specified order
+  const hours = [
+    ...[11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 12], // 11 PM to 12 AM
+    ...[11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 12], // 11 PM to 12 PM
+  ];
+
+  // Function to convert 24-hour format to 12-hour format with AM/PM
+  const formatHour = (hour: number) => {
+    if (hour === 12) return "12 PM";
+    if (hour === 11) return "11 PM";
+    if (hour > 11) return `${hour - 12} PM`;
+    return `${hour} AM`;
+  };
 
   return (
     <>
@@ -15,12 +29,12 @@ const TimeSlider = ({ showcase }: TimeSliderProps) => {
           </div>
           <div>
             <ul className='flex items-center justify-center gap-1.5'>
-              {numbers.map((number) => (
+              {hours.map((hour, index) => (
                 <li
-                  key={number}
-                  className=' h-[25px] w-[25px] flex items-center justify-center border text-[11px] cursor-pointer bg-[#f9f9f9] dark:bg-[#333]   border-[#f3f3f3] transition duration-300 dark:border-[#353535] hover:bg-[#000] hover:text-white dark:hover:bg-[#454545] rounded-full'
+                  key={index}
+                  className='h-[25px] w-[25px] flex items-center justify-center border text-[11px] cursor-pointer bg-[#f9f9f9] dark:bg-[#333] border-[#f3f3f3] transition duration-300 dark:border-[#353535] hover:bg-[#000] hover:text-white dark:hover:bg-[#454545] rounded-full'
                 >
-                  {number}
+                  {hour}
                 </li>
               ))}
             </ul>
