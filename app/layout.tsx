@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Sidebar from "@/components/Sidebar";
-import Navbar from "@/components/navbar/Navbar";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -38,10 +37,7 @@ export default function RootLayout({
             <div className='h-[100vh] sticky top-0 '>
               <Sidebar />
             </div>
-            <div className='md:w-[898px] px-6 '>
-              <Navbar />
-              {children}
-            </div>
+            <div className='md:w-[898px] px-6 '>{children}</div>
           </div>
         </ThemeProvider>
       </body>

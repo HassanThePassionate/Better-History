@@ -1,11 +1,11 @@
 import React from "react";
-import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
 import { X } from "lucide-react";
 import { Button } from "../ui/button";
-
-const History = () => {
+interface HistoryProps {
+  showcase: Boolean;
+}
+const History = ({ showcase }: HistoryProps) => {
   const links = [
     {
       url: "https://dev.to/derlin/get-favicons-from-any-website-using-a-hidden-google-api-3p1e",
@@ -44,7 +44,7 @@ const History = () => {
       {links.map((link, i) => (
         <>
           <div
-            className=' history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded  transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]  '
+            className=' history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded  transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333] '
             key={i}
           >
             <div className='flex gap-2 items-start  '>
@@ -69,7 +69,7 @@ const History = () => {
               >
                 More From Site
               </Button>
-              <X size={18} />
+              <X size={18} className={`${showcase ? "" : "hidden"}`} />
             </div>
           </div>
         </>
