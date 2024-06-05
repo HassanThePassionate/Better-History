@@ -79,7 +79,7 @@ const DateSlider: React.FC = () => {
         <ChevronLeft size={12} />
       </Button>
 
-      <div className='flex items-center gap-5'>
+      <div className='flex items-center gap-3'>
         {dates.map((date, index) => (
           <Card
             key={index}

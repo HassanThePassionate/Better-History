@@ -9,7 +9,7 @@ const TimeSlider = () => {
         <Moon size={18} />
       </div>
       <div>
-        <ul className='flex items-center justify-center gap-3'>
+        <ul className='flex items-center justify-center gap-1.5'>
           {numbers.map((number) => (
             <li
               key={number}

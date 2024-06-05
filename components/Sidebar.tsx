@@ -24,21 +24,21 @@ const Sidebar = () => {
         <nav className='grid items-start gap-3 px-2 text-sm font-medium lg:px-4'>
           <Link
             href='#'
-            className='flex items-center gap-3 rounded-lg px-3 py-2 bg-[#f1f1f1]  dark:bg-[#333] text-[12px]   hover:text-primary'
+            className='flex items-center gap-5 rounded px-3 py-2 bg-[#f1f1f1]  dark:bg-[#333] text-[12px]   hover:text-primary'
           >
             <Activity size={20} />
             Activity
           </Link>
           <Link
             href='#'
-            className='flex items-center gap-3 rounded-lg px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px]  duration-300  transition-all hover:text-primary'
+            className='flex items-center gap-5  rounded px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px]  duration-300  transition-all hover:text-primary'
           >
             <Laptop size={20} />
             Devices
           </Link>
           <Link
             href='#'
-            className='flex items-center gap-3 rounded-lg  px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px] duration-300  transition-all hover:text-primary'
+            className='flex items-center gap-5 rounded px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px] duration-300  transition-all hover:text-primary'
           >
             <BsSearch size={18} />
             Search engine
@@ -47,7 +47,7 @@ const Sidebar = () => {
           <div className=' h-14  border-t border-[#ececec] dark:border-[#353535]  lg:h-[60px] mt-4 '>
             <Link
               href='#'
-              className='flex items-center gap-3  mt-4 rounded-lg px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px] duration-300  transition-all hover:text-primary'
+              className='flex items-center gap-3  mt-6  rounded px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px] duration-300  transition-all hover:text-primary'
             >
               <PiWarningCircleFill size={20} />
               About
@@ -65,14 +65,14 @@ const Sidebar = () => {
       <div className='mt-auto p-4'>
         <Link
           href='#'
-          className='flex items-center gap-3 rounded-lg px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px] duration-300  transition-all hover:text-primary'
+          className='flex items-center gap-5  rounded px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px] duration-300  transition-all hover:text-primary'
         >
           <Settings size={20} />
           Setting
         </Link>
         <Link
           href='#'
-          className='flex items-center gap-3 rounded-lg px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px] duration-300  transition-all hover:text-primary'
+          className='flex items-center gap-5  rounded px-3 py-2 dark:hover:bg-[#333] hover:bg-[#f1f1f1] text-[12px] duration-300  transition-all hover:text-primary'
         >
           <MessageCircle size={20} />
           Feedback / Bug

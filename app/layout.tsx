@@ -38,7 +38,7 @@ export default function RootLayout({
             <div className='h-[100vh] sticky top-0 '>
               <Sidebar />
             </div>
-            <div className='md:w-[1024px] px-6 '>
+            <div className='md:w-[898px] px-6 '>
               <Navbar />
               {children}
             </div>

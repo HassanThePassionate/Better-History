@@ -65,7 +65,7 @@ const History = () => {
             <div className='btns hidden items-center gap-2 '>
               <Button
                 size='sm'
-                className='text-[10px] bg-[#070607] text-white rounded'
+                className='text-[10px] bg-[#070607] text-white dark:hover:bg-[#111] rounded'
               >
                 More From Site
               </Button>
