@@ -68,8 +68,8 @@ const History = ({ showcase }: HistoryProps) => {
     setLinks([]);
   };
   return (
-    <div className='mt-8'>
-      <div className='flex items-center justify-between p-2'>
+    <div className='mt-4'>
+      <div className='flex items-center justify-between px-1'>
         <div className='text-sm'>05:00 PM</div>
 
         <AlertDialog>
