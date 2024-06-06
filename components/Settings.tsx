@@ -49,7 +49,7 @@ const Settings = () => {
 
   return (
     <div>
-      <h1 className='mt-2 mb-1 font-semibold'>Clearing history</h1>
+      <h1 className='mt-2 mb-2 font-semibold'>Clearing history</h1>
 
       <Button
         variant='secondary'

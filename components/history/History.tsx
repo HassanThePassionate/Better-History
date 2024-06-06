@@ -17,6 +17,7 @@ import {
 import { RootState } from "@/redux/store/store";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import { Separator } from "../ui/separator";
 
 interface HistoryProps {
   showcase: boolean;
@@ -147,78 +148,89 @@ const History = ({ showcase }: HistoryProps) => {
 
       {isScroll
         ? links.map((link) => (
-            <div
-              className='history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]'
-              key={link.id}
-            >
-              <div className='flex gap-2 items-start'>
-                <div>
-                  <Image
-                    src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
-                    alt='img'
-                    width={20}
-                    height={20}
-                  />
+            <>
+              <div
+                className='history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]'
+                key={link.id}
+              >
+                <div className='flex gap-2 items-start'>
+                  <div>
+                    <Image
+                      src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
+                      alt='img'
+                      width={20}
+                      height={20}
+                    />
+                  </div>
+                  <div>
+                    <h4 className='text-[13px]'>Better History</h4>
+                    <p className='text-[10px] text-[#999]'>{link.url}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className='text-[13px]'>Better History</h4>
-                  <p className='text-[10px] text-[#999]'>{link.url}</p>
+                <div className='text-[10px] text-[#999] date'>2024/06/05</div>
+
+                <div className='btns hidden items-center gap-2'>
+                  <Link
+                    href={link.url}
+                    className='text-[10px] h-6 flex items-center justify-center px-2 bg-[#070607] text-white dark:hover:bg-[#111] rounded'
+                    target={`${isChecked ? "blank" : ""}`}
+                  >
+                    More From Site
+                  </Link>
+                  <div
+                    className={`${showcase ? "" : "hidden"}`}
+                    onClick={() => clear(link.id)}
+                  >
+                    <X size={18} />
+                  </div>
                 </div>
               </div>
-              <div className='text-[10px] text-[#999] date'>2024/06/05</div>
-              <div className='btns hidden items-center gap-2'>
-                <Link
-                  href={link.url}
-                  className='text-[10px] h-6 flex items-center justify-center px-2 bg-[#070607] text-white dark:hover:bg-[#111] rounded'
-                  target={`${isChecked ? "blank" : ""}`}
-                >
-                  More From Site
-                </Link>
-                <div
-                  className={`${showcase ? "" : "hidden"}`}
-                  onClick={() => clear(link.id)}
-                >
-                  <X size={18} />
-                </div>
+              <div className='px-[8px]'>
+                <Separator />
               </div>
-            </div>
+            </>
           ))
         : links.slice(0, 6).map((link) => (
-            <div
-              className='history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]'
-              key={link.id}
-            >
-              <div className='flex gap-2 items-start'>
-                <div>
-                  <Image
-                    src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
-                    alt='img'
-                    width={20}
-                    height={20}
-                  />
+            <>
+              <div
+                className='history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]'
+                key={link.id}
+              >
+                <div className='flex gap-2 items-start'>
+                  <div>
+                    <Image
+                      src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
+                      alt='img'
+                      width={20}
+                      height={20}
+                    />
+                  </div>
+                  <div>
+                    <h4 className='text-[13px]'>Better History</h4>
+                    <p className='text-[10px] text-[#999]'>{link.url}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className='text-[13px]'>Better History</h4>
-                  <p className='text-[10px] text-[#999]'>{link.url}</p>
+                <div className='text-[10px] text-[#999] date'>2024/06/05</div>
+                <div className='btns hidden items-center gap-2'>
+                  <Link
+                    href={link.url}
+                    className='text-[10px] h-6 flex items-center justify-center px-2 bg-[#070607] text-white dark:hover:bg-[#111] rounded'
+                    target={`${isChecked ? "blank" : ""}`}
+                  >
+                    More From Site
+                  </Link>
+                  <div
+                    className={`${showcase ? "" : "hidden"}`}
+                    onClick={() => clear(link.id)}
+                  >
+                    <X size={18} />
+                  </div>
                 </div>
               </div>
-              <div className='text-[10px] text-[#999] date'>2024/06/05</div>
-              <div className='btns hidden items-center gap-2'>
-                <Link
-                  href={link.url}
-                  className='text-[10px] h-6 flex items-center justify-center px-2 bg-[#070607] text-white dark:hover:bg-[#111] rounded'
-                  target={`${isChecked ? "blank" : ""}`}
-                >
-                  More From Site
-                </Link>
-                <div
-                  className={`${showcase ? "" : "hidden"}`}
-                  onClick={() => clear(link.id)}
-                >
-                  <X size={18} />
-                </div>
+              <div className='px-[8px]'>
+                <Separator />
               </div>
-            </div>
+            </>
           ))}
     </div>
   );
