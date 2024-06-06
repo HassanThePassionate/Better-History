@@ -14,11 +14,18 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { RootState } from "@/redux/store/store";
+import { useSelector } from "react-redux";
+import Link from "next/link";
 
 interface HistoryProps {
-  showcase: Boolean;
+  showcase: boolean;
 }
+
 const History = ({ showcase }: HistoryProps) => {
+  const fontSize = useSelector((state: RootState) => state.fontSize.value);
+  const isChecked = useSelector((state: RootState) => state.checkbox.isChecked);
+  const isScroll = useSelector((state: RootState) => state.Scroll.isScroll);
   const [links, setLinks] = React.useState([
     {
       id: "1",
@@ -60,13 +67,55 @@ const History = ({ showcase }: HistoryProps) => {
       id: "10",
       url: "https://play.google.com/store/games?hl=en&gl=US",
     },
+    {
+      id: "11",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "12",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "13",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "14",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "15",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "16",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "17",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "18",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "19",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
+    {
+      id: "20",
+      url: "https://play.google.com/store/games?hl=en&gl=US",
+    },
   ]);
   const clear = (id: string) => {
     setLinks(links.filter((link) => link.id !== id));
   };
+
   const allClear = () => {
     setLinks([]);
   };
+
   return (
     <div className='mt-4'>
       <div className='flex items-center justify-between px-1'>
@@ -76,7 +125,7 @@ const History = ({ showcase }: HistoryProps) => {
           <AlertDialogTrigger>
             <Button
               size='sm'
-              className='text-[10px] bg-[#070607] text-white dark:hover:bg-[#111] rounded'
+              className={`${fontSize} text-[10px] bg-[#070607] text-white dark:hover:bg-[#111] rounded`}
             >
               Delete
             </Button>
@@ -95,42 +144,82 @@ const History = ({ showcase }: HistoryProps) => {
           </AlertDialogContent>
         </AlertDialog>
       </div>
-      {links.map((link) => (
-        <div
-          className=' history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded  transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333] '
-          key={link.id}
-        >
-          <div className='flex gap-2 items-start  '>
-            <div>
-              <Image
-                src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
-                alt='img'
-                width={20}
-                height={20}
-              />
-            </div>
-            <div>
-              <h4 className='text-[12px]'>Better History</h4>
-              <p className='text-[10px] text-[#999]'>{link.url}</p>
-            </div>
-          </div>
-          <div className='text-[10px] text-[#999] date'>2024/06/05</div>
-          <div className='btns hidden items-center gap-2 '>
-            <Button
-              size='sm'
-              className='text-[10px] bg-[#070607] text-white dark:hover:bg-[#111] rounded'
-            >
-              More From Site
-            </Button>
+
+      {isScroll
+        ? links.map((link) => (
             <div
-              className={`${showcase ? "" : "hidden"}`}
-              onClick={() => clear(link.id)}
+              className='history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]'
+              key={link.id}
             >
-              <X size={18} />
+              <div className='flex gap-2 items-start'>
+                <div>
+                  <Image
+                    src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
+                    alt='img'
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <div>
+                  <h4 className='text-[13px]'>Better History</h4>
+                  <p className='text-[10px] text-[#999]'>{link.url}</p>
+                </div>
+              </div>
+              <div className='text-[10px] text-[#999] date'>2024/06/05</div>
+              <div className='btns hidden items-center gap-2'>
+                <Link
+                  href={link.url}
+                  className='text-[10px] h-6 flex items-center justify-center px-2 bg-[#070607] text-white dark:hover:bg-[#111] rounded'
+                  target={`${isChecked ? "blank" : ""}`}
+                >
+                  More From Site
+                </Link>
+                <div
+                  className={`${showcase ? "" : "hidden"}`}
+                  onClick={() => clear(link.id)}
+                >
+                  <X size={18} />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
+          ))
+        : links.slice(0, 6).map((link) => (
+            <div
+              className='history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]'
+              key={link.id}
+            >
+              <div className='flex gap-2 items-start'>
+                <div>
+                  <Image
+                    src={`https://www.google.com/s2/favicons?domain=${link.url}&sz=128`}
+                    alt='img'
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <div>
+                  <h4 className='text-[13px]'>Better History</h4>
+                  <p className='text-[10px] text-[#999]'>{link.url}</p>
+                </div>
+              </div>
+              <div className='text-[10px] text-[#999] date'>2024/06/05</div>
+              <div className='btns hidden items-center gap-2'>
+                <Link
+                  href={link.url}
+                  className='text-[10px] h-6 flex items-center justify-center px-2 bg-[#070607] text-white dark:hover:bg-[#111] rounded'
+                  target={`${isChecked ? "blank" : ""}`}
+                >
+                  More From Site
+                </Link>
+                <div
+                  className={`${showcase ? "" : "hidden"}`}
+                  onClick={() => clear(link.id)}
+                >
+                  <X size={18} />
+                </div>
+              </div>
+            </div>
+          ))}
     </div>
   );
 };

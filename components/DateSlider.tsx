@@ -83,7 +83,7 @@ const DateSlider: React.FC = () => {
         {dates.map((date, index) => (
           <Card
             key={index}
-            className={`text-center flex items-center rounded justify-center flex-col dark:border-[#333] dark:hover:bg-[#757575] hover:bg-black h-[50px] w-[90px] max-w-[90px] hover:text-white transition duration-500 ${
+            className={`text-center flex items-center rounded justify-center flex-col dark:border-[#333] dark:hover:bg-[#757575] hover:bg-black pt-[7px] px-[8px] pb-[8px] w-[70px] lg:w-[83px] hover:text-white transition duration-500 ${
               date.getTime() === selectedDate.getTime()
                 ? "bg-black text-white dark:bg-[#757575]"
                 : "bg-[#f9f9f9] dark:bg-[#353535]"
