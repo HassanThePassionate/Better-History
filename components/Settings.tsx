@@ -32,8 +32,8 @@ const Settings = () => {
   const isScroll = useSelector((state: RootState) => state.Scroll.isScroll);
   const format = useSelector((state: RootState) => state.timeFormat.format);
 
-  const handleChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setFormat(event.target.value as "24-hour" | "12-hour"));
+  const handleChanges: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+    dispatch(setFormat(event.currentTarget.value as "24-hour" | "12-hour"));
   };
 
   const handleChange = () => {
