@@ -119,7 +119,7 @@ const History = ({ showcase }: HistoryProps) => {
 
   return (
     <div className='mt-4'>
-      <div className='flex items-center justify-between px-1'>
+      <div className='flex items-center justify-between px-1 mb-2'>
         <div className='text-sm'>05:00 PM</div>
 
         <AlertDialog>
