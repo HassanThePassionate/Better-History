@@ -150,7 +150,7 @@ const History = ({ showcase }: HistoryProps) => {
         ? links.map((link) => (
             <>
               <div
-                className='history flex justify-between px-[8px] py-[10px] my-2 cursor-pointer rounded transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]'
+                className='history flex justify-between px-[8px] py-[10px]  cursor-pointer rounded transition duration-300 hover:bg-[#f1f1f1] dark:hover:bg-[#333]'
                 key={link.id}
               >
                 <div className='flex gap-2 items-start'>
