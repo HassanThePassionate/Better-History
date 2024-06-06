@@ -8,7 +8,11 @@ interface TimeFormatState {
 
 const initialState: TimeFormatState = {
   format: "24-hour",
-  hours: Array.from({ length: 24 }, (_, i) => i.toString()),
+  hours: [
+    ...[23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12].map((h) => h + ""),
+    ...[11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1].map((h) => h + ""),
+    "00",
+  ],
 };
 
 const timeFormatSlice = createSlice({
