@@ -1,16 +1,6 @@
 "use client";
-import {
-  Activity,
-  History,
-  Laptop,
-  MessageCircle,
-  Moon,
-  Settings,
-} from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { PiWarningCircleFill } from "react-icons/pi";
-import { BsSearch } from "react-icons/bs";
 import { ModeToggle } from "./ModeButton";
 
 const Sidebar: React.FC = () => {
