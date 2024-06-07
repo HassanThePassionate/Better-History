@@ -33,7 +33,7 @@ const TimeSlider = ({ showcase }: TimeSliderProps) => {
               {hours.map((hour, index) => (
                 <li
                   key={index}
-                  className='h-[25px] w-[25px] flex items-center justify-center border text-[11px] cursor-pointer bg-[#f9f9f9] dark:bg-[#333] border-[#f3f3f3] transition duration-300 dark:border-[#353535] hover:bg-[#000] hover:text-white dark:hover:bg-[#454545] rounded-full'
+                  className='h-[25px] w-[25px] flex items-center justify-center border text-[11px] cursor-pointer bg-[#f9f9f9] dark:bg-[#333] border-[#f3f3f3] transition duration-300 dark:border-[#353535] hover:bg-[#000] hover:text-white  dark:hover:bg-[#454545] rounded-full'
                 >
                   {hour}
                 </li>
@@ -59,13 +59,13 @@ const TimeSlider = ({ showcase }: TimeSliderProps) => {
         <div className='flex gap-4 py-[13px] border-b border-[#f3f3f3] dark:border-[#353535]'>
           <Button
             variant='secondary'
-            className='dark:bg-[#353535] dark:text-white hover:bg-[#f1f1f1] dark:hover:bg-[#656565] transition duration-300'
+            className='dark:bg-[#353535] dark:text-white hover:bg-[#000] rounded hover:text-white h-8 px-4 py-2 dark:hover:bg-[#656565] transition duration-300'
           >
             Desktop-De390232
           </Button>
           <Button
             variant='secondary'
-            className='dark:bg-[#353535] dark:text-white hover:bg-[#f1f1f1] dark:hover:bg-[#656565] transition duration-300'
+            className='dark:bg-[#353535] dark:text-white hover:text-white h-8 px-4 py-2 rounded  hover:bg-[#000] dark:hover:bg-[#656565] transition duration-300'
           >
             Techno-Ch6i
           </Button>
